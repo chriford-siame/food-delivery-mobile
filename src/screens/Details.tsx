@@ -6,15 +6,12 @@ import COLORS from '../const/colors';
 const DetailsScreen = ({ navigation, route }) => {
     const food = route.params;
     return (
-        <SafeAreaView style={{ flex: 1, flexDirection: 'column', backgroundColor: COLORS.white }}>
+        <SafeAreaView style={styles.main}>
             <StatusBar translucent backgroundColor={COLORS.white} />
             <View style={styles.header}>
-                <View style={{ flexDirection: 'row' }}>
+                <View style={styles.header_container}>
                     <Icon name='arrow-back-ios' size={28} color={COLORS.dark} onPress={() => { navigation.navigate('FoodsScreen') }} />
-                    <Text style={{
-                        color: COLORS.dark,
-                        fontSize: 20
-                    }}>Details</Text>
+                    <Text style={styles.header_container_title}>Details</Text>
                 </View>
             </View>
             <View>
@@ -58,6 +55,7 @@ const DetailsScreen = ({ navigation, route }) => {
 }
 
 const styles = StyleSheet.create({
+    main: { flex: 1, flexDirection: 'column', backgroundColor: COLORS.white },
     header: {
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -66,6 +64,8 @@ const styles = StyleSheet.create({
         height: '20%',
         backgroundColor: COLORS.white
     },
+    header_container: { flexDirection: 'row' },
+    header_container_title: {color: COLORS.dark, fontSize: 20},
     btn: {
         justifyContent: 'center', 
         alignItems: 'center',
