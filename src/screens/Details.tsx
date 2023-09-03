@@ -3,10 +3,6 @@ import { Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Vie
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import COLORS from '../const/colors';
 
-// 42609150016453823427
-// 06/25
-// 142
-
 const DetailsScreen = ({ navigation, route }) => {
     const food = route.params;
     return (
