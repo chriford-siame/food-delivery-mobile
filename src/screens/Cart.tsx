@@ -41,11 +41,11 @@ const CartScreen = ({ navigation, route }) => {
         )
     }
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+        <SafeAreaView style={styles.main}>
             <StatusBar translucent backgroundColor='rgba(0,0,0,0)' />
             <View style={styles.header}>
                 <Icon name="arrow-back-ios" size={28} color={COLORS.dark} onPress={() => navigation.navigate("DetailsScreen", food)} />
-                <Text style={{ fontSize: 20, color: COLORS.dark }}>Cart</Text>
+                <Text style={styles.header_text}>Cart</Text>
             </View>
             <FlatList
                 numColumns={1}
@@ -57,6 +57,7 @@ const CartScreen = ({ navigation, route }) => {
 }
 
 const styles = StyleSheet.create({
+    main: { flex: 1, backgroundColor: COLORS.white },
     header: {
         height: "20%",
         backgroundColor: COLORS.white,
@@ -64,6 +65,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingHorizontal: 20,
     },
+    header_text: { fontSize: 20, color: COLORS.dark },
 
     card: {
         height: 120,
@@ -90,7 +92,6 @@ const styles = StyleSheet.create({
     card_item_content: { justifyContent: 'space-between', flexDirection: 'row', width: "55%" },
     card_item_content_style: { color: COLORS.dark, fontSize: 18, fontWeight: 'bold' },
     card_item_count: { fontWeight: 'bold', color: COLORS.dark, fontSize: 20, left: 25 },
-
     card_item_cart_button: {
         flexDirection: 'row',
         backgroundColor: COLORS.orange,
