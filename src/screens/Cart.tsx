@@ -21,7 +21,7 @@ const CartScreen = ({ navigation, route }) => {
                     </View>
 
                     <View style={styles.card_item_content}>
-                        <View style={{flexDirection: 'column'}}>
+                        <View style={{ flexDirection: 'column' }}>
                             <Text style={styles.card_item_content_style}>{food.name}</Text>
                             <Text style={{ color: COLORS.secondary }}>{food.name}</Text>
                             <Text style={styles.card_item_content_style}>${food.price}</Text>
@@ -30,8 +30,8 @@ const CartScreen = ({ navigation, route }) => {
                             <Text style={styles.card_item_count}>{1}</Text>
                             <TouchableOpacity>
                                 <View style={styles.card_item_cart_button}>
-                                    <Icon name="remove" size={25} color={COLORS.white} onPress={() => {}} />
-                                    <Icon name="add" size={25} color={COLORS.white} onPress={() => {}} />
+                                    <Icon name="remove" size={25} color={COLORS.white} onPress={() => { }} />
+                                    <Icon name="add" size={25} color={COLORS.white} onPress={() => { }} />
                                 </View>
                             </TouchableOpacity>
                         </View>
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 10,
     },
-    card_container: {justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center'},
+    card_container: { justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center' },
     card_image_container: { justifyContent: 'center', height: 100, width: 150 },
     card_image: {
         justifyContent: 'center',
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         width: "47%",
         borderRadius: 100,
     },
-    card_item_content: { justifyContent: 'space-between', flexDirection: 'row', width: "55%"},
+    card_item_content: { justifyContent: 'space-between', flexDirection: 'row', width: "55%" },
     card_item_content_style: { color: COLORS.dark, fontSize: 18, fontWeight: 'bold' },
     card_item_count: { fontWeight: 'bold', color: COLORS.dark, fontSize: 20, left: 25 },
 
