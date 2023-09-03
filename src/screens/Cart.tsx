@@ -11,35 +11,25 @@ const CartScreen = ({ navigation, route }) => {
     const [totalPrice, setPrice] = useState(0)
 
     const food = route.params;
-    const FoodCard = ({ item }) => {
+    const Card = ({ item }) => {
         var item = item.item;
         return (
-            <View style={styles.foodCard} key={item.id}>
-                <View style={{
-                    justifyContent: 'space-between',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                }}>
-                    <View style={{ justifyContent: 'center', height: 100, width: 150 }}>
-                        <Image style={styles.imageDetail} source={food.image} />
+            <View style={styles.card} key={item.id}>
+                <View style={styles.card_container}>
+                    <View style={styles.card_image_container}>
+                        <Image style={styles.card_image} source={food.image} />
                     </View>
 
-                    <View style={{
-                        justifyContent: 'space-between',
-                        flexDirection: 'row',
-                        width: "55%"
-                    }}>
-                        <View style={{
-                            flexDirection: 'column',
-                        }}>
-                            <Text style={{ color: COLORS.dark, fontSize: 18, fontWeight: 'bold' }}>{food.name}</Text>
+                    <View style={styles.card_item_content}>
+                        <View style={{flexDirection: 'column'}}>
+                            <Text style={styles.card_item_content_style}>{food.name}</Text>
                             <Text style={{ color: COLORS.secondary }}>{food.name}</Text>
-                            <Text style={{ color: COLORS.dark, fontSize: 18, fontWeight: 'bold' }}>${food.price}</Text>
+                            <Text style={styles.card_item_content_style}>${food.price}</Text>
                         </View>
                         <View>
-                            <Text style={{ fontWeight: 'bold', color: COLORS.dark, fontSize: 20, left: 25 }}>{1}</Text>
+                            <Text style={styles.card_item_count}>{1}</Text>
                             <TouchableOpacity>
-                                <View style={styles.cartBtn}>
+                                <View style={styles.card_item_cart_button}>
                                     <Icon name="remove" size={25} color={COLORS.white} onPress={() => {}} />
                                     <Icon name="add" size={25} color={COLORS.white} onPress={() => {}} />
                                 </View>
@@ -60,7 +50,7 @@ const CartScreen = ({ navigation, route }) => {
             <FlatList
                 numColumns={1}
                 data={foodList}
-                renderItem={item => <FoodCard item={item} />}
+                renderItem={item => <Card item={item} />}
             />
         </SafeAreaView>
     )
@@ -74,7 +64,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingHorizontal: 20,
     },
-    foodCard: {
+
+    card: {
         height: 120,
         backgroundColor: COLORS.white,
         marginBottom: 30,
@@ -88,13 +79,19 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 10,
     },
-    imageDetail: {
+    card_container: {justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center'},
+    card_image_container: { justifyContent: 'center', height: 100, width: 150 },
+    card_image: {
         justifyContent: 'center',
         height: "70%",
         width: "47%",
         borderRadius: 100,
     },
-    cartBtn: {
+    card_item_content: { justifyContent: 'space-between', flexDirection: 'row', width: "55%"},
+    card_item_content_style: { color: COLORS.dark, fontSize: 18, fontWeight: 'bold' },
+    card_item_count: { fontWeight: 'bold', color: COLORS.dark, fontSize: 20, left: 25 },
+
+    card_item_cart_button: {
         flexDirection: 'row',
         backgroundColor: COLORS.orange,
         paddingHorizontal: 10,
