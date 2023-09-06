@@ -1,10 +1,9 @@
 import React from 'react';
-import { Dimensions, FlatList, Image, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Dimensions, FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import COLORS from '../const/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import FoodTypes from '../const/food.type';
 import foodList from '../const/foods';
-import BottomNavigator from '../components/BottomNavigator';
 
 const { width } = Dimensions.get('screen');
 const FoodsScreen = ({ navigation }) => {
